@@ -1,38 +1,77 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+html,
+body {
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.App h1 {
   text-align: center;
+  margin: 2rem 0 4rem 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1.25rem;
+  padding: 1.5rem;
+  grid-gap: 1.25rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.container .box {
+  min-height: 20rem;
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  box-shadow: -2px -2px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.container .box span {
+  font-size: 1.25rem;
+}
+.container .box .save {
+  position: absolute;
+  top: 4.5rem;
+  right: 2.5rem;
+  border: 1px solid #000;
+  border-radius: 0.125rem;
+  padding: 0.25rem;
+}
+.container .box .start-stop {
+  position: absolute;
+  top: 4.5rem;
+  right: 8rem;
+  border: 1px solid #000;
+  border-radius: 0.125rem;
+  padding: 0.25rem;
+}
+.container .box.current-note p {
+  display: inline-block;
+  margin-top: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    overflow: auto;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }
